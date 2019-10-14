@@ -1,22 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: 40px;
+  text-align: center;
+
+  color: hsl(5, 70%, 90%);
+  background-color: #e55244;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.timer {
+  width: 80vw;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.timer__circle {
+  width:  60vmin;
+  height: 60vmin;
+  margin: 3vh 0;
+  border-radius: 50%;
+
+  background-color: hsl(5, 70%, 90%);
+}
+
+.timer__counter {
+  font-size: 1.25em;
 }
