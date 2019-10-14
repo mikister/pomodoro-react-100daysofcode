@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/pomodoro-react-100daysofcode/static/css/main.e15c916f.chunk.css",
+    "main.js": "/pomodoro-react-100daysofcode/static/js/main.8e497520.chunk.js",
+    "main.js.map": "/pomodoro-react-100daysofcode/static/js/main.8e497520.chunk.js.map",
+    "runtime-main.js": "/pomodoro-react-100daysofcode/static/js/runtime-main.6872a81a.js",
+    "runtime-main.js.map": "/pomodoro-react-100daysofcode/static/js/runtime-main.6872a81a.js.map",
+    "static/js/2.a1cdc048.chunk.js": "/pomodoro-react-100daysofcode/static/js/2.a1cdc048.chunk.js",
+    "static/js/2.a1cdc048.chunk.js.map": "/pomodoro-react-100daysofcode/static/js/2.a1cdc048.chunk.js.map",
+    "index.html": "/pomodoro-react-100daysofcode/index.html",
+    "precache-manifest.fb5b3cf97babf42ce03e120f3f066cab.js": "/pomodoro-react-100daysofcode/precache-manifest.fb5b3cf97babf42ce03e120f3f066cab.js",
+    "service-worker.js": "/pomodoro-react-100daysofcode/service-worker.js",
+    "static/css/main.e15c916f.chunk.css.map": "/pomodoro-react-100daysofcode/static/css/main.e15c916f.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6872a81a.js",
+    "static/js/2.a1cdc048.chunk.js",
+    "static/css/main.e15c916f.chunk.css",
+    "static/js/main.8e497520.chunk.js"
+  ]
+}
