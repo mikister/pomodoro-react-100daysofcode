@@ -12,7 +12,7 @@
   min-height: 100vh;
 
   font-family: 'Quicksand', sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 300;
   text-align: center;
 
@@ -22,6 +22,18 @@
 
 h1 {
   font-weight: 300;
+}
+
+.button {
+  padding: 1.2em 1.6em;
+  border: 0;
+
+  color: #e55244;
+  background-color: hsl(5, 70%, 90%);
+}
+
+.button:hover, .button:focus {
+  background-color: hsl(5, 40%, 80%);
 }
 
 .timer {
@@ -44,6 +56,7 @@ h1 {
 }
 
 .timer__counter {
+  margin-bottom: 0.2em;
   font-size: 1.25em;
 }
 

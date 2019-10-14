@@ -9,6 +9,7 @@ function App() {
       <div className="timer">
         <div className="timer__circle"></div>
         <div className="timer__counter">25:00</div>
+        <button className="button">RESET</button>
       </div>
     </div>
   );
