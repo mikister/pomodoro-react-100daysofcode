@@ -99,15 +99,14 @@ class App extends Component {
           <div>
             {
               this.state.timerPaused ?
-              <Button value="START" func={this.startTimer.bind(this)} />
+                <Button value="START" func={this.startTimer.bind(this)} />
               :
-              <Button value="STOP" func={this.stopTimer.bind(this)} />
+                <Button value="STOP" func={this.stopTimer.bind(this)} />
             }
             {
               this.state.timerRunning ?
-              <Button value="RESET" func={this.resetTimer.bind(this)} />
-              :
-              null
+                <Button value="RESET" func={this.resetTimer.bind(this)} />
+              : null
             }
           </div>
         </div>
