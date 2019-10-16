@@ -106,6 +106,10 @@ class App extends Component {
             }
           </div>
         </div>
+
+        <div className="options">
+          { renderOptionsList.bind(this)(this.state.timerOptions) }
+        </div>
       </div>
     );
   }
@@ -117,4 +121,24 @@ function Button({ value, func }) {
   return (
     <button className="button" onClick={func}>{value}</button>
   );
+}
+
+function renderButtonList(values, funcs) {
+  let buttonsList = [];
+  let buttonNum = values.length;
+
+  for (var ii = 0; ii < buttonNum; ii++) {
+    buttonsList.push(<Button value={values[ii]} func={funcs[ii]} key={ii} />);
+  }
+
+  return buttonsList;
+}
+
+function renderOptionsList(durations) {
+  let funcsList = [];
+  durations.forEach( (option) => {
+    funcsList.push(() => { this.setOption.bind(this)(option) });
+  });
+
+  return renderButtonList(durations, funcsList);
 }
