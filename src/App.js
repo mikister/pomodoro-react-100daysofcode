@@ -18,10 +18,11 @@ class App extends Component {
 
   setOption(amount) {
     this.setState({
-      selectedOption: amount
+      selectedOption: amount,
+      timeLeft: amount * 60 * 1000
     });
 
-    this.timerRef.current.style.setProperty("--timer-duration", amount + "s");
+    this.timerRef.current.style.setProperty("--timer-duration", amount * 60 + "s");
   }
 
   startTimer() {
