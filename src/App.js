@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {
       timerOptions: [5, 10, 15, 20 ,25], // in minutes
       selectedOption: 5, // in minutes, not an index
-      timeLeft: 5*60, // in seconds
+      timeLeft: 5 * 60 * 1000, // in milliseconds
       timerRunning: false,
       timerPaused: true,
     };
@@ -34,7 +34,7 @@ class App extends Component {
       () => {
         if (this.state.timeLeft !== 1) {
           this.setState({
-            timeLeft: this.state.timeLeft - 1
+            timeLeft: this.state.timeLeft - 10
           });
         }
         else {
@@ -44,13 +44,13 @@ class App extends Component {
           this.resetTimer();
         }
       },
-      1000
+      10
     );
   }
 
   resetTimer() {
     this.setState({
-      timeLeft: this.state.selectedOption * 60,
+      timeLeft: this.state.selectedOption * 60 * 1000,
       timerRunning: false,
       timerPaused: true,
     });
@@ -67,9 +67,16 @@ class App extends Component {
   }
 
   getTimeLeft() {
-    let minutesLeft = this.state.timeLeft - this.state.timeLeft % 60;
-    minutesLeft = minutesLeft / 60;
-    return (minutesLeft) + ":" + (this.state.timeLeft - minutesLeft * 60);
+    let minutesLeft = this.state.timeLeft - this.state.timeLeft % (60 * 1000);
+    minutesLeft = minutesLeft / (60 * 1000);
+    let secondsLeft = (this.state.timeLeft - minutesLeft * 60 * 1000) / 1000;
+
+    if (Math.round(secondsLeft) === 60) {
+      secondsLeft = 0;
+      minutesLeft = minutesLeft + 1;
+    }
+
+    return (minutesLeft) + ":" + Math.round(secondsLeft);
   }
 
   render() {
