@@ -28,6 +28,7 @@ h1 {
   padding: 1.2em 1.6em;
   border: 0;
 
+  font-weight: 500;
   color: #e55244;
   background-color: hsl(5, 70%, 90%);
 }
