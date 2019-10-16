@@ -113,7 +113,12 @@ class App extends Component {
         </div>
 
         <div className="options">
-          { renderOptionsList.bind(this)(this.state.timerOptions) }
+          { 
+            this.state.timerRunning ?
+              null
+            :
+              renderOptionsList.bind(this)(this.state.timerOptions)
+          }
         </div>
       </div>
     );
