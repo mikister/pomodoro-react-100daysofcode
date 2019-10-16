@@ -22,7 +22,7 @@ class App extends Component {
       timeLeft: amount * 60 * 1000
     });
 
-    this.timerRef.current.style.setProperty("--timer-duration", amount * 60 + "s");
+    this.timerRef.current.style.setProperty("--timer-duration", amount * 60 + "s", "important");
   }
 
   startTimer() {
@@ -78,6 +78,10 @@ class App extends Component {
     }
 
     return (minutesLeft) + ":" + Math.round(secondsLeft);
+  }
+
+  componentDidMount() {
+    this.setOption(this.state.selectedOption);
   }
 
   render() {

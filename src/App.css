@@ -50,8 +50,6 @@ h1 {
 }
 
 .timer--on > .timer__circle {
-  --timer-duration: 300s; /* default option */
-
   animation: timer-pass var(--timer-duration) linear;
 }
 
