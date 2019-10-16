@@ -94,13 +94,13 @@ class App extends Component {
           <div>
             {
               this.state.timerPaused ?
-              <button className="button" onClick={this.startTimer.bind(this)}>START</button>
+              <Button value="START" func={this.startTimer.bind(this)} />
               :
-              <button className="button" onClick={this.stopTimer.bind(this)}>STOP</button>
+              <Button value="STOP" func={this.stopTimer.bind(this)} />
             }
             {
               this.state.timerRunning ?
-              <button className="button" onClick={this.resetTimer.bind(this)}>RESET</button>
+              <Button value="RESET" func={this.resetTimer.bind(this)} />
               :
               null
             }
@@ -112,3 +112,9 @@ class App extends Component {
 }
 
 export default App;
+
+function Button({ value, func }) {
+  return (
+    <button className="button" onClick={func}>{value}</button>
+  );
+}
