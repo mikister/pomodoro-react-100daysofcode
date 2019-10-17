@@ -127,3 +127,9 @@ h1 {
     clip-path: polygon(50% 0%, 50% 50%, 50% 50%, 50% 0%, 50% 0%, 50% 0, 50% 50%);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .App {
+    font-size: 8vw;
+  }
+}
