@@ -98,6 +98,10 @@ h1 {
   margin-top: 1em;
 }
 
+.menu_button {
+  display: none;
+}
+
 @keyframes timer-pass {
   0% {
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 0, 50% 50%);
@@ -128,8 +132,53 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-aspect-ratio: 14/9) {
   .App {
-    font-size: 8vw;
+    font-size: 6vw;
+  }
+
+  .timer__circle {
+    width: 80vmin;
+    height: 80vmin;
+  }
+
+  .timer__counter {
+    font-size: 15vw;
+  }
+
+  .options {
+    width: 100%;
+    align-items: center;
+    padding: 1em;
+    background-color: #e55244;
+  }
+
+  .options > .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .options--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .menu_button {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+  }
+
+  .menu_button:hover {
+    color: hsl(5, 70%, 30%);
   }
 }

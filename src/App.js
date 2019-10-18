@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,14 +13,22 @@ class App extends Component {
       timeLeft: 5 * 60 * 1000, // in milliseconds
       timerRunning: false,
       timerPaused: true,
+      optionsMenuOpen: true,
     };
 
     this.timerRef = React.createRef();
     this.timerID = null;
   }
 
+  toggleMenu() {
+    this.setState({
+      optionsMenuOpen: !this.state.optionsMenuOpen
+    });
+  }
+
   setOption(amount) {
     this.setState({
+      optionsMenuOpen: false,
       selectedOption: amount,
       timeLeft: amount * 60 * 1000
     });
@@ -111,15 +122,26 @@ class App extends Component {
           </div>
         </div>
 
-        { 
-          this.state.timerRunning ?
-            null
-          :
-            <div className="options">
-              <span>Set duration</span>
-              { renderOptionsList.bind(this)(this.state.timerOptions) }
-            </div>
-        }
+        <div className="menu_button" onClick={this.toggleMenu.bind(this)}>
+          {
+             this.state.optionsMenuOpen ?
+             <FontAwesomeIcon icon={ faTimes } />
+             :
+             <FontAwesomeIcon icon={ faBars } />
+           }
+        </div>
+
+        <div className={this.state.optionsMenuOpen ? "" : "options--hidden "}>
+          { 
+            this.state.timerRunning ?
+              null
+            :
+              <div className="options">
+                <span>Set duration</span>
+                { renderOptionsList.bind(this)(this.state.timerOptions) }
+              </div>
+          }
+        </div>
       </div>
     );
   }
